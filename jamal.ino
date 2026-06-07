@@ -411,7 +411,7 @@ switch (state) {
             rightEncoderCount = 0;
             interrupts();
             encIPrev       = 0;
-            straightIPrev  = 0;   // <-- reset straight correction
+            straightIPrev  = 0;   //-- reset straight correction
             refPosition    = 14.0;
             lastTime       = now;
             state = 3;
@@ -637,7 +637,7 @@ switch (state) {
         }
         break;
 
-    case 8: { //  SERVO ACTION 1 — ADD CODE HERE 
+    case 8: { //  SERVO ACTION 1 
         // TODO: trigger arm movement and drawing
         float x = 235;  // fixed horizontal position
         float z_values[15] = {230, 220, 210, 200, 190, 180, 170, 160, 150, 140, 130, 120, 110, 100, 90};
@@ -897,7 +897,7 @@ switch (state) {
         break;
 
 
-    case 14: // SERVO ACTION 2 — ADD CODE HERE
+    case 14: // SERVO ACTION 2 
         // TODO: trigger arm movement and drawing
         moveServo(S1, "Base", 0, 1466, -1.25); //-1.46
         moveServo(S2, "Elbow", 0, 1500, -1.57);
