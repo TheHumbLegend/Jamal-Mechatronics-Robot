@@ -503,7 +503,7 @@ switch (state) {
             rightEncoderCount = 0;
             interrupts();
             encIPrev       = 0;
-            straightIPrev  = 0;   // <-- reset straight correction
+            straightIPrev  = 0;   // reset straight correction
             refPosition    = 50.0;
             lastTime       = now;
             state = 5;
