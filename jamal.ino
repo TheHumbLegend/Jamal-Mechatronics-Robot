@@ -175,7 +175,7 @@ void setup() {
     pinMode(LED2, OUTPUT);
     pinMode(LED3, OUTPUT);
 
-    pinMode(BUTTON, INPUT); // External pull-down resistor on hardware
+    pinMode(BUTTON, INPUT); // External pull down resistor
 
     pinMode(EncoderLEFT_A,  INPUT);
     pinMode(EncoderLEFT_B,  INPUT);
@@ -184,7 +184,7 @@ void setup() {
 
     pinMode(IR_SENSOR_PIN, INPUT);
 
-    // Full quadrature — attach interrupts to both A and B channels
+    // Full quadrature 
     attachInterrupt(digitalPinToInterrupt(EncoderLEFT_A),  leftEncoderISR_A,  CHANGE);
     attachInterrupt(digitalPinToInterrupt(EncoderLEFT_B),  leftEncoderISR_B,  CHANGE);
     attachInterrupt(digitalPinToInterrupt(EncoderRIGHT_A), rightEncoderISR_A, CHANGE);
@@ -411,7 +411,7 @@ switch (state) {
             rightEncoderCount = 0;
             interrupts();
             encIPrev       = 0;
-            straightIPrev  = 0;   //-- reset straight correction
+            straightIPrev  = 0;   // reset straight correction
             refPosition    = 14.0;
             lastTime       = now;
             state = 3;
@@ -454,7 +454,7 @@ switch (state) {
         }
         break;
 
-    case 97: // Settle after forward — reset for turn
+    case 97: // Settle after forward 
         if (now - stateStartTime >= 600) {
             noInterrupts();
             leftEncoderCount  = 0;
@@ -496,14 +496,14 @@ switch (state) {
         }
         break;
 
-    case 96: // Settle after left 45 — reset for forward
+    case 96: // Settle after left 45 
         if (now - stateStartTime >= 600) {
             noInterrupts();
             leftEncoderCount  = 0;
             rightEncoderCount = 0;
             interrupts();
             encIPrev       = 0;
-            straightIPrev  = 0;   // reset straight correction
+            straightIPrev  = 0;   
             refPosition    = 50.0;
             lastTime       = now;
             state = 5;
@@ -546,7 +546,7 @@ switch (state) {
         }
         break;
 
-    case 95: // Settle after forward — reset for turn
+    case 95: // Settle after forward
         if (now - stateStartTime >= 600) {
             noInterrupts();
             leftEncoderCount  = 0;
@@ -588,7 +588,7 @@ switch (state) {
         }
         break;
 
-    case 94: // Settle after left 90 — reset for forward
+    case 94: // Settle after left 90 
          if (now - stateStartTime >= 600) {
             noInterrupts();
             leftEncoderCount  = 0;
@@ -644,7 +644,7 @@ switch (state) {
 
          delay(1000);  // brief pause before starting movement
   
-        //Begin straight-line movement 
+        //Begin straight line movement 
         Serial.println("Beginning IK straight-line sequence...");
         for (int i = 0; i < 15; i++) {
             float z_rel = z_values[i];
@@ -660,7 +660,7 @@ switch (state) {
         state = 92;
         break;
     }
-    case 92: // Settle after servo action 1 — reset for turn
+    case 92: // Settle after servo action 1
         if (now - stateStartTime >= 600) {
             noInterrupts();
             leftEncoderCount  = 0;
@@ -702,14 +702,14 @@ switch (state) {
         }
         break;
 
-    case 91: // Settle after left 90 — reset for forward
+    case 91: // Settle after left 90 
         if (now - stateStartTime >= 600) {
             noInterrupts();
             leftEncoderCount  = 0;
             rightEncoderCount = 0;
             interrupts();
             encIPrev       = 0;
-            straightIPrev  = 0;   // <-- reset straight correction
+            straightIPrev  = 0;   
             refPosition    = 66.0;
             lastTime       = now;
             state = 10;
@@ -734,7 +734,7 @@ switch (state) {
             if (abs(ctrl) < 50 && abs(encError) > 0.1)
                 ctrl = (ctrl > 0) ? 50 : -50;
 
-            // Straight-line correction
+            // Straight line correction
             float encDiff = (float)(rightSnap - leftSnap);
             float straightCorr = straightKp * encDiff;
             straightIPrev += straightKi * encDiff * deltaT;
@@ -752,7 +752,7 @@ switch (state) {
         }
         break;
 
-    case 90: // Settle after forward 70 — reset for turn
+    case 90: // Settle 
         if (now - stateStartTime >= 600) {
             noInterrupts();
             leftEncoderCount  = 0;
@@ -794,14 +794,14 @@ switch (state) {
         }
         break;
 
-    case 89: // Settle after left 90 — reset for forward
+    case 89: // Settle after left 90 
         if (now - stateStartTime >= 600) {
             noInterrupts();
             leftEncoderCount  = 0;
             rightEncoderCount = 0;
             interrupts();
             encIPrev       = 0;
-            straightIPrev  = 0;   // <-- reset straight correction
+            straightIPrev  = 0;   
             refPosition    = 58.0;
             lastTime       = now;
             state = 12;
@@ -844,7 +844,7 @@ switch (state) {
         }
         break;
     
-        case 88: // Settle after forward 70 — reset for turn
+        case 88: 
         if (now - stateStartTime >= 600) {
             noInterrupts();
             leftEncoderCount  = 0;
@@ -915,7 +915,8 @@ switch (state) {
 }
 
 
-    // Print status every 250 ms
+    // Print status every 250 ms 
+    // Comment this out during the demo
     if (now - lastDisplay >= 250) {
         lastDisplay = now;
         Serial.print("State: ");        Serial.print(state);
