@@ -96,12 +96,10 @@ The final robot successfully:
 3. Executed an inverse-kinematics-based arm sequence.
 4. Completed the required whiteboard drawing task.
 
-## Authors
+## Author
 
 * Rotimi Dayo
-* Valour Inyang
-* Rustamkhon Ozodkhonzoda
-* Arjun Rajesh
+
 
 University of Sheffield
 ELE221 Robot Challenge
