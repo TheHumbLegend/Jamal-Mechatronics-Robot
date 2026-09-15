@@ -1,3 +1,6 @@
+<img width="852" height="513" alt="image" src="https://github.com/user-attachments/assets/7fd2189d-52b6-49c8-8cec-f012750542fc" />
+
+
 # JAM-L: Joint Arm Mobile Locomotor
 
 A differential-drive mobile manipulator developed as part of the University of Sheffield ELE221 Mechatronics Robot Challenge.
@@ -6,7 +9,7 @@ A differential-drive mobile manipulator developed as part of the University of S
 
 JAM-L combines autonomous navigation with robotic manipulation. The robot uses wheel encoders and PI control to navigate a predefined route before using a 2-DOF robotic arm to perform a drawing task on a whiteboard.
 
-The project integrates mechanical design, embedded systems, control engineering, sensor fusion, and robotic kinematics into a single autonomous platform.
+The project integrates mechanical design, embedded systems, control engineering, sensor fusion, and robotic kinematics into a single autonomous platform. **Check the pdf report for more details**
 
 ## Features
 
