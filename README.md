@@ -1,7 +1,7 @@
 <img width="852" height="513" alt="image" src="https://github.com/user-attachments/assets/7fd2189d-52b6-49c8-8cec-f012750542fc" />
 
 
-# JAM-L: Joint Arm Mobile Locomotor
+# JAM-L: Joint Arm Mobile Locomotor (My Beloved)
 
 A differential-drive mobile manipulator developed as part of the University of Sheffield ELE221 Mechatronics Robot Challenge.
 
